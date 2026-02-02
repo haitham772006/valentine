@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>For You ❤️</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+            background-color: #ffe6e6;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            margin: 20px;
+            cursor: pointer;
+        }
+
+        #noBtn {
+            position: absolute;
+        }
+
+        #final {
+            display: none;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Do you want to be my Valentine? 💖</h1>
+
+    <button onclick="yesClicked()">Yes ❤️</button>
+    <button id="noBtn" onmouseover="moveNo()">No 💔</button>
+
+    <div id="final">
+        <h2>You made me the happiest person 🥰</h2>
+        <img src="https://i.imgur.com/0Z8FQYk.png" width="300">
+    </div>
+
+    <script>
+        function moveNo() {
+            const btn = document.getElementById("noBtn");
+            const x = Math.random() * (window.innerWidth - 100);
+            const y = Math.random() * (window.innerHeight - 50);
+            btn.style.left = x + "px";
+            btn.style.top = y + "px";
+        }
+
+        function yesClicked() {
+            document.querySelector("h1").style.display = "none";
+            document.querySelectorAll("button").forEach(b => b.style.display = "none");
+            document.getElementById("final").style.display = "block";
+        }
+    </script>
+
+</body>
+</html>
